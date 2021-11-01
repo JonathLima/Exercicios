@@ -2,10 +2,13 @@
 #include <locale.h>
 
 // Declaração para realizar as funções sem TOP-DOWN.
+void Menu();
+void SelectOption(int Num);
 float Soma(float Num1, float Num2);
 float Subtract(float Num1, float Num2);
 float Multipli(float Num1, float Num2);
 float Division(float Num1, float Num2);
+
 
 
 int main()
@@ -21,13 +24,6 @@ void Menu()
 	setlocale(LC_ALL, "");
 
 	int SelectNum;
-	float Num1, Num2;
-
-	std::cout << "Digite o primeiro valor: ";
-	std::cin >> Num1;
-	std::cout << "Digite o Segundo valor: ";
-	std::cin >> Num2;
-	std::cout << "\n";
 
 	std::cout << "1 - Soma" << "\n";
 	std::cout << "2 - Subtração" << "\n";
@@ -43,18 +39,25 @@ void Menu()
 }
 
 //Selecionar Opção para realizar a operação
-int SelectOption(int Num)
+void SelectOption(int Num)
 {
-	float Num1, Num2;
+	float N1, N2;
+
+	std::cout << "Digite o primeiro valor: ";
+	std::cin >> N1;
+	std::cout << "Digite o Segundo valor: ";
+	std::cin >> N2;
+	std::cout << "\n";
+
 	switch (Num)
 	{
-	case 1: std::cout << "Resultado da soma: " << Soma(Num1, Num2) << "\n";
+	case 1: std::cout << "Resultado da soma: " << Soma(N1, N2) << "\n";
 		break;
-	case 2: std::cout << "Resultado da Subtração: " << Subtract(Num1, Num2) << "\n";
+	case 2: std::cout << "Resultado da Subtração: " << Subtract(N1, N2) << "\n";
 		break;
-	case 3: std::cout << "Resultado da Multiplicação: " << Multipli(Num1, Num2) << "\n";
+	case 3: std::cout << "Resultado da Multiplicação: " << Multipli(N1, N2) << "\n";
 		break;
-	case 4: std::cout << "Resultado da Divisão: " << Division(Num1, Num2) << "\n";
+	case 4: std::cout << "Resultado da Divisão: " << Division(N1, N2) << "\n";
 	default: std::cout << "Valor Invalido!" << "\n";
 		break;
 	}
