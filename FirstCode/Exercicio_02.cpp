@@ -38,7 +38,15 @@ void Menu()
 	std::cin >> SelectNum;
 	std::cout << "\n";
 
-	switch (SelectNum)
+	SelectOption(SelectNum);
+
+}
+
+//Selecionar Opção para realizar a operação
+int SelectOption(int Num)
+{
+	float Num1, Num2;
+	switch (Num)
 	{
 	case 1: std::cout << "Resultado da soma: " << Soma(Num1, Num2) << "\n";
 		break;
@@ -50,7 +58,6 @@ void Menu()
 	default: std::cout << "Valor Invalido!" << "\n";
 		break;
 	}
-
 }
 
 //Funções das operações.
